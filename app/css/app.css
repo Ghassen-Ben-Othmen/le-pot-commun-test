@@ -1,8 +1,51 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,300');
-html,body{
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,300");
+html,
+body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat' ,sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /*TODO*/
+
+/* row */
+.row {
+  display: inline;
+}
+
+/*Content - container*/
+.content {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* pot item */
+.pot-item {
+  position: relative;
+  width: 400px;
+  height: 150px;
+  margin: 20px;
+}
+
+.pot-item-img {
+  position: absolute;
+  z-index: -10;
+  height: 100%;
+  width: 100%;
+}
+
+.pot-name {
+  position: absolute;
+  color: #fff;
+  font-weight: 600;
+  bottom: 0;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  background: linear-gradient(to top, #000, transparent);
+  opacity: 0.9;
+}
