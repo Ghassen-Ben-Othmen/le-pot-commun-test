@@ -2,19 +2,20 @@ angular.module("LpcWebTest2018").service("LpcTranslateService", [
   "$http",
   "$rootScope",
   function($http, $rootScope) {
-    var properties,
+    var propertiesURL,
       setPropertiesUrlImpl = function(url) {
         //TODO
-        $http.get(url).success(data => {
-          if (localStorage.getItem("locale"))
-            $rootScope.locale = localStorage.getItem("locale");
-          else $rootScope.locale = Object.keys(data)[1];
-          properties = data;
-        });
+        propertiesURL = url;
       },
       loadPropertiesImpl = function() {
         //TODO
-        return properties;
+        // send GET request to server
+        $http.get(propertiesURL).success(data => {
+          $rootScope.locale = localStorage.getItem("locale")
+            ? localStorage.getItem("locale")
+            : Object.keys(data)[1];
+          $rootScope.properties = data;
+        });
       };
 
     return {

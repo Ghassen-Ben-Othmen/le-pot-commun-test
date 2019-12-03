@@ -5,13 +5,11 @@ angular.module("LpcWebTest2018").filter("lpcTranslate", [
   "$rootScope",
   function(LpcTranslateService, $rootScope) {
     //TODO
-
+    // load prperties from server
+    LpcTranslateService.loadProperties();
     var filter = function(key, locale) {
       //TODO
-      let properties = LpcTranslateService.loadProperties();
-      if (properties) {
-        return properties[locale][key];
-      }
+      if ($rootScope.properties) return $rootScope.properties[locale][key];
     };
     //TODO
     return filter;
