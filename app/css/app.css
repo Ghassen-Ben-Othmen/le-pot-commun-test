@@ -10,7 +10,9 @@ body {
 
 /* row */
 .row {
-  display: inline;
+  position: relative;
+  width: 900px;
+  text-align: center;
 }
 
 /*Content - container*/
@@ -25,16 +27,25 @@ body {
 /* pot item */
 .pot-item {
   position: relative;
-  width: 400px;
+  width: 350px;
   height: 150px;
-  margin: 20px;
+  margin: 10px;
 }
 
 .pot-item-img {
-  position: absolute;
+  position: relative;
   z-index: -10;
   height: 100%;
   width: 100%;
+}
+
+.pot-item-img-loader {
+  position: absolute;
+  top: 35%;
+  left: 35%;
+  height: 20px;
+  width: 100px;
+  z-index: 100;
 }
 
 .pot-name {
@@ -48,4 +59,28 @@ body {
   text-align: center;
   background: linear-gradient(to top, #000, transparent);
   opacity: 0.9;
+}
+
+.col {
+  position: relative;
+  display: inline-block;
+}
+
+/* media query*/
+@media (max-width: 700px) {
+  .col {
+    display: block;
+    text-align: center;
+  }
+
+  .row {
+    position: relative;
+    width: 100%;
+    text-align: center;
+  }
+  .pot-item {
+    width: 100%;
+    height: 150px;
+    margin: 10px;
+  }
 }
