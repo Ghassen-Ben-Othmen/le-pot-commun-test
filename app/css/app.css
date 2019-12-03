@@ -66,6 +66,29 @@ body {
   display: inline-block;
 }
 
+/* locale */
+.lang-choice-container {
+  display: flex;
+  height: 100px;
+}
+
+.lang-choice-container a {
+  text-decoration: none;
+  margin: 0px 10px;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.lang-choice-container a:hover:after,
+.selected:after {
+  content: "";
+  margin: auto;
+  height: 5px;
+  width: 30px;
+  background-color: #9c0034;
+}
+
 /* media query*/
 @media (max-width: 700px) {
   .col {

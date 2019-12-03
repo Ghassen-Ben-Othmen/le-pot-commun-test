@@ -6,7 +6,9 @@ angular.module("LpcWebTest2018").service("LpcTranslateService", [
       setPropertiesUrlImpl = function(url) {
         //TODO
         $http.get(url).success(data => {
-          $rootScope.locale = Object.keys(data)[1];
+          if (localStorage.getItem("locale"))
+            $rootScope.locale = localStorage.getItem("locale");
+          else $rootScope.locale = Object.keys(data)[1];
           properties = data;
         });
       },
